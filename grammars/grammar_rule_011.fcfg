@@ -1,0 +1,26 @@
+% start S
+S[SEM=(?vp + ?np)] -> VP[SEM=?vp] NP[SEM=?np]
+S[SEM=('SELECT' + ?np)] -> NP[SEM=?np]
+VP[SEM=(?vb)] -> VB[SEM=?vb]
+NP[SEM=(?nns + ?nn + ?in + ?nnp)] -> NN[SEM=?nn] NNS[SEM=?nns] IN[SEM=?in] NNP[SEM=?nnp]
+VB[SEM='SELECT'] -> 'show' | 'display' | 'list' | 'find'
+NN[SEM="WHERE category = 'Drama'"] -> 'drama'
+NN[SEM="WHERE category = 'Documentary'"] -> 'documentary' | 'documentaries'
+NN[SEM="WHERE category = 'Music'"] -> 'music'
+NN[SEM="WHERE category = 'Action'"] -> 'action'
+NN[SEM="WHERE category = 'Classics'"] -> 'classics' | 'classic'
+NN[SEM="WHERE category = 'New'"] -> 'new'
+NN[SEM="WHERE category = 'Comedy'"] -> 'comedy'
+NN[SEM="WHERE category = 'Travel'"] -> 'travel'
+NN[SEM="WHERE category = 'Sci-Fi'"] -> 'sci-fi' | 'scifi'
+NN[SEM="WHERE category = 'Animation'"] -> 'animation' | 'anime'
+NN[SEM="WHERE category = 'Drama'"] -> 'drama'
+NN[SEM="WHERE category = 'Foreign'"] -> 'foreign' | 'international'
+NN[SEM="WHERE category = 'Games'"] -> 'games'
+NN[SEM="WHERE category = 'Children'"] -> 'children' | 'kids'
+NN[SEM="WHERE category = 'Sports'"] -> 'sports'
+NN[SEM="WHERE category = 'New'"] -> 'new'
+NN[SEM="WHERE category = 'horror'"] -> 'horror'
+NNS[SEM='title, description, category, rating, actors FROM film_list'] -> 'movies' | 'films' | 'flicks'
+IN[SEM='AND'] -> 'with' | 'starring' | 'featuring'
+NNP[SEM='actors LIKE #STARRING'] -> '#STARRING'

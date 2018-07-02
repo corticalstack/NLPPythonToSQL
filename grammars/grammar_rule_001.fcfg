@@ -1,0 +1,6 @@
+% start S
+S[SEM=(?n + ?jj + ?nns)] -> JJ[SEM=?jj] N[SEM=?n] IN[SEM=?in] NNS[SEM=?nns]
+JJ[SEM='title, description, category, rating, actors'] -> 'complete' | 'full'
+N[SEM='SELECT'] -> 'list'
+IN[SEM=''] -> 'of'
+NNS[SEM='FROM film_list'] -> 'movies' | 'films' | 'flicks'

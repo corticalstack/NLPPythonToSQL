@@ -1,0 +1,26 @@
+% start S
+S[SEM=(?n + ?in + ?nc)] -> NC[SEM=?nc] N[SEM=?n] IN[SEM=?in] | DET[SEM=?det] NC[SEM=?nc] N[SEM=?n] IN[SEM=?in] | VP[SEM=?vp] NC[SEM=?nc] N[SEM=?n] IN[SEM=?in] | VP[SEM=?vp] DET[SEM=?det] NC[SEM=?nc] N[SEM=?n] IN[SEM=?in]
+S[SEM=('SELECT title, description, category, rating, actors FROM film_list' + ?in + ?nc)] -> VP[SEM=?vp] DET[SEM=?det] NC[SEM=?nc] IN[SEM=?in]
+S[SEM=(?n + 'WHERE ')] -> N[SEM=?n] IN[SEM=?in]
+VP[SEM=(?vb)] -> VB[SEM=?vb] | VB[SEM=?vb] PRP[SEM=?prp]
+VB[SEM='SELECT'] -> 'show' | 'display' | 'list' | 'give' | 'tell' | 'suggest' | 'propose'
+PRP[SEM=''] -> 'me'
+DET[SEM=''] -> 'the' | 'a' | 'an'
+NC[SEM="category = 'Horror' AND "] -> 'horror'
+NC[SEM="category = 'Documentary' AND "] -> 'documentary' | 'documentaries'
+NC[SEM="category = 'Music' AND "] -> 'music'
+NC[SEM="category = 'Action' AND "] -> 'action'
+NC[SEM="category = 'Classics' AND "] -> 'classics' | 'classic'
+NC[SEM="category = 'New' AND "] -> 'new'
+NC[SEM="category = 'Comedy' AND "] -> 'comedy'
+NC[SEM="category = 'Travel' AND "] -> 'travel'
+NC[SEM="category = 'Sci-Fi' AND "] -> 'sci-fi' | 'scifi'
+NC[SEM="category = 'Animation' AND "] -> 'animation' | 'anime'
+NC[SEM="category = 'Drama' AND "] -> 'drama'
+NC[SEM="category = 'Foreign' AND "] -> 'foreign' | 'international'
+NC[SEM="category = 'Games' AND "] -> 'games'
+NC[SEM="category = 'Children' AND "] -> 'children' | 'kids'
+NC[SEM="category = 'Sports' AND "] -> 'sports'
+NC[SEM="category = 'New' AND "] -> 'new'
+N[SEM='SELECT title, description, category, rating, actors FROM film_list'] -> 'movie' | 'movies' | 'film' | 'films' | 'flick' | 'flicks'
+IN[SEM='WHERE'] -> 'about' | 'with' | 'containing' | 'featuring'

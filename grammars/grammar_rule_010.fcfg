@@ -1,0 +1,10 @@
+% start S
+S[SEM=(?vp + ?np)] -> VP[SEM=?vp] NP[SEM=?np]
+S[SEM=('SELECT' + ?nns + ?nn)] -> NN[SEM=?nn] NNS[SEM=?nns]
+VP[SEM=(?v + ?dt)] -> V[SEM=?v] DT[SEM=?dt]
+VP[SEM=(?v)] -> V[SEM=?v]
+NP[SEM=(?nns + ?nn)] -> NN[SEM=?nn] NNS[SEM=?nns]
+V[SEM='SELECT'] -> 'find' | 'show' | 'display' | 'list' | 'give'
+DT[SEM=''] -> 'all'
+NNS[SEM='title, description, category, rating, actors FROM film_list'] -> 'movies' | 'films' | 'flicks'
+NN[SEM='WHERE actors LIKE #STARRING'] -> '#STARRING'

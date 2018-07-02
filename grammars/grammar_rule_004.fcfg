@@ -1,0 +1,15 @@
+% start S
+S[SEM=(?vp + ?np)] -> VP[SEM=?vp] NP[SEM=?np]
+VP[SEM=(?vb + ?prp)] -> VB[SEM=?vb] PRP[SEM=?prp]
+VP[SEM=(?vb)] -> VB[SEM=?vb]
+NP[SEM=(?nns + ?vbd + ?jj)] -> NNS[SEM=?nns] VBD[SEM=?vbd] JJ[SEM=?jj]
+VB[SEM='SELECT title, description, category, rating, actors'] -> 'show' | 'give'
+PRP[SEM=''] -> 'me'
+NNS[SEM=' FROM film_list'] -> 'films' | 'movies' | 'flicks'
+VBD[SEM='WHERE rating'] -> 'rated' | 'graded' | 'classified' | 'classed'
+JJ[SEM=" = 'PG'"] -> 'pg'
+JJ[SEM=" = 'G'"] -> 'g'
+JJ[SEM=" = 'R'"] -> 'r'
+JJ[SEM=" = 'PG-13'"] -> 'pg13' | 'pg-13'
+JJ[SEM=" = 'NC-17'"] -> 'nc17' | 'nc-17'
+

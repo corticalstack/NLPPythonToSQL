@@ -1,0 +1,10 @@
+% start S
+S[SEM=(?nns + ?vbn + ?nnp)] -> NNS[SEM=?nns] VBN[SEM=?vbn] NNP[SEM=?nnp]
+NNS[SEM='SELECT title, description, category, rating, actors FROM film_list'] -> 'films' | 'movies'
+VBN[SEM='WHERE rating'] -> 'rated' | 'graded' | 'classified' | 'classed'
+NNP[SEM='= "PG"'] -> 'pg'
+NNP[SEM='= "G"'] -> 'g'
+NNP[SEM='= "R"'] -> 'r'
+NNP[SEM='= "PG-13"'] -> 'pg-13' | 'pg13'
+NNP[SEM='= "NC-17"'] -> 'nc-17' | 'nc17'
+

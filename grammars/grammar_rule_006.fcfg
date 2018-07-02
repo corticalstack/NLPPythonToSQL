@@ -1,0 +1,33 @@
+% start S
+S[SEM=(?vp + ?np)] -> VP[SEM=?vp] NP[SEM=?np]
+VP[SEM=(?vb)] -> VB[SEM=?vb] | VB[SEM=?vb] PRP[SEM=?prp]
+NP[SEM=(?nns + ?jj + 'ORDER BY RAND() LIMIT 1')] -> DT[SEM=?dt] JJ[SEM=?jj] NNS[SEM=?nns, NUM=sg] | JJ[SEM=?jj] NNS[SEM=?nns, NUM=sg]
+NP[SEM=(?nns + 'ORDER BY RAND() LIMIT 1')] -> DT[SEM=?dt] NNS[SEM=?nns, NUM=sg]
+NP[SEM=(?nns + 'ORDER BY RAND() LIMIT 1')] -> NNS[SEM=?nns, NUM=sg]
+NP[SEM=(?nns + ?jj)] -> DT[SEM=?dt] JJ[SEM=?jj] NNS[SEM=?nns, NUM=pl] | JJ[SEM=?jj] NNS[SEM=?nns, NUM=pl]
+NP[SEM=(?nns)] -> DT[SEM=?dt] NNS[SEM=?nns, NUM=pl]
+NP[SEM=(?nns)] -> NNS[SEM=?nns, NUM=pl]
+VB[SEM='SELECT'] -> 'show' | 'display' | 'list' | 'give' | 'tell'
+PRP[SEM=''] -> 'me'
+DT[SEM=''] -> 'a' | 'the' | 'of' | 'an'
+JJ[SEM="WHERE category = 'Horror'"] -> 'horror'
+JJ[SEM="WHERE category = 'Documentary'"] -> 'documentary' | 'documentaries'
+JJ[SEM="WHERE category = 'Music'"] -> 'music'
+JJ[SEM="WHERE category = 'Action'"] -> 'action'
+JJ[SEM="WHERE category = 'Classics'"] -> 'classics' | 'classic'
+JJ[SEM="WHERE category = 'New'"] -> 'new'
+JJ[SEM="WHERE category = 'Comedy'"] -> 'comedy'
+JJ[SEM="WHERE category = 'Travel'"] -> 'travel'
+JJ[SEM="WHERE category = 'Sci-Fi'"] -> 'sci-fi' | 'scifi'
+JJ[SEM="WHERE category = 'Animation'"] -> 'animation' | 'anime'
+JJ[SEM="WHERE category = 'Drama'"] -> 'drama'
+JJ[SEM="WHERE category = 'Foreign'"] -> 'foreign' | 'international'
+JJ[SEM="WHERE category = 'Games'"] -> 'games'
+JJ[SEM="WHERE category = 'Children'"] -> 'children' | 'kids'
+JJ[SEM="WHERE category = 'Sports'"] -> 'sports'
+JJ[SEM="WHERE category = 'New'"] -> 'new'
+NNS[SEM='title, description, category, rating, actors FROM film_list', NUM=sg] -> 'movie' | 'film' | 'flick'
+NNS[SEM='title, description, category, rating, actors FROM film_list', NUM=pl] -> 'movies' | 'films' | 'flicks'
+NNS[SEM='first_name, last_name, film_info FROM actor_info', NUM=sg] -> 'actor'
+NNS[SEM='first_name, last_name, film_info FROM actor_info', NUM=pl] -> 'actors'
+

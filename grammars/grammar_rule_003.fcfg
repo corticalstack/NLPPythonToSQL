@@ -1,0 +1,15 @@
+% start S
+S[SEM=(?vp + ?np)] -> VP[SEM=?vp] NP[SEM=?np]
+VP[SEM=(?v + ?prp)] -> V[SEM=?v] PRP[SEM=?prp]
+VP[SEM=(?v)] -> V[SEM=?v]
+NP[SEM=(?det + ?n + ?nns)] -> DET[SEM=?det] JJ[SEM=?jj] N[SEM=?n] P[SEM=?p] NNS[SEM=?nns]
+NP[SEM=(?det + ?nns)] -> DET[SEM=?det] NNS[SEM=?nns]
+PRP[SEM=''] -> 'me'
+V[SEM='SELECT'] -> 'show' | 'give'
+DET[SEM=''] -> 'a' | 'the'
+JJ[SEM=''] -> 'complete' | 'full'
+N[SEM=''] -> 'list' | 'database'
+P[SEM=''] -> 'of'
+NNS[SEM='* FROM film_list'] -> 'movies' | 'films' | 'flicks'
+NNS[SEM='* FROM actor_info'] -> 'actors'
+

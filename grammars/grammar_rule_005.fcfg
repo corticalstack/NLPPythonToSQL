@@ -1,0 +1,21 @@
+% start S
+S[SEM=(?np + ?vp + 'ORDER BY RAND() LIMIT 1')] -> NP[SEM=?np, NUM=sg] VP[SEM=?vp]
+S[SEM=(?np + ?vp)] -> NP[SEM=?np, NUM=pl] VP[SEM=?vp]
+NP[SEM=(?wp + ?nns), NUM=sg] -> WP[SEM=?wp] NNS[SEM=?nns, NUM=sg]
+NP[SEM=(?wp + ?nns), NUM=pl] -> WP[SEM=?wp] NNS[SEM=?nns, NUM=pl]
+VP[SEM=(?vbp + ?vbn + ?nnp)] -> VBP[SEM=?vbp] VBN[SEM=?vbn] NNP[SEM=?nnp]
+WP[SEM='SELECT'] -> 'what' | 'which'
+NNS[SEM='title, description, category, rating, actors FROM film_list', NUM=sg] -> 'movie' | 'film' | 'flick'
+NNS[SEM='title, description, category, rating, actors FROM film_list', NUM=pl] -> 'movies' | 'films' | 'flicks'
+VBP[SEM='WHERE'] -> 'are' | 'is'
+VBN[SEM='rating'] -> 'rated' | 'graded' | 'classified' | 'classed'
+NNP[SEM=" = 'PG'"] -> 'pg'
+NNP[SEM=" = 'G'"] -> 'g'
+NNP[SEM=" = 'R'"] -> 'r'
+NNP[SEM=" = 'PG-13'"] -> 'pg13' | 'pg-13'
+NNP[SEM=" = 'NC-17'"] -> 'nc17' | 'nc-17'
+
+
+
+
+

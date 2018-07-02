@@ -1,0 +1,6 @@
+% start S
+S[SEM=?sp] -> SP[SEM=?sp]
+SP[SEM=(?v + ?n)] -> N[SEM=?n] V[SEM=?v]
+N[SEM='title, description, category, rating, actors FROM film_list'] -> 'movies' | 'films' | 'flicks'
+N[SEM='title, description, category, rating, actors FROM film_list ORDER BY RAND() LIMIT 1'] -> 'movie' | 'film' | 'flick'
+V[SEM='SELECT'] -> 'list' | 'show' | 'display' | 'render' | 'write' | 'give' | 'publish'
